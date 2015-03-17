@@ -1,0 +1,10 @@
+{
+  "name": "memorize.words",
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "bootstrap": "~3.0.1",
+    "html5shiv": "~3.6.2",
+    "respond": "~1.4.2"
+  },
+  "privet": true
+}

@@ -1,0 +1,13 @@
+.navbar > .container {
+    max-width: 630px;
+}
+
+main {
+    margin: 0px 15px;
+    padding: 100px 0;
+}
+
+main .list-word {
+    margin-bottom: 20px;
+    color: red;
+}

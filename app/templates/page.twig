@@ -1,0 +1,41 @@
+{% extends "base.twig" %}
+{% block title %}English lang{% endblock %}
+{% block javascriptCode %}
+<script language="javascript">
+    ion.sound({
+        sounds: [
+        {% for eng, rus in data %}
+            {
+                name: "{{eng}}~{{rus['url']}}~"
+            },
+        {% endfor %}
+        ],
+        volume: 1,
+        path: "media/audio/",
+        preload: false
+    });
+</script>
+{% endblock %}
+{% block body %}
+    
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">  
+    {% for eng, rus in data %}      
+        <div class="row list-word">
+          <div class="col-lg-12">
+            <div class="input-group">
+              <input id="{{eng}}" type="text" class="form-control" placeholder="{{rus['text']}}">
+              <span class="input-group-btn">
+                <button data="{{eng}}~{{rus['url']}}~" class="btn btn-default" type="button">voice</button>
+              </span>
+            </div>
+          </div>
+        </div>
+    {% endfor %}
+    </div>
+    <div class="col-md-4"></div>
+</div>
+    
+{% endblock %}
+

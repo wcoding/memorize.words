@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="media/app/vendor/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="media/app/css/jquery.fileupload.css" rel="stylesheet">
+    <link href="media/app/css/main.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="media/app/vendor/html5shiv/dist/js/html5shiv.min.js"></script>
+    <script src="media/app/vendor/respond/dest/js/respond.min.js"></script>
+    <![endif]-->
+    <script language="javascript" src="media/app/vendor/jquery/dist/jquery.min.js"></script>
+    <script language="javascript" src="media/app/js/ion.sound.min.js"></script>
+    <script language="javascript" src="media/app/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+    
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Words</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <form method="post" action="/upload"  enctype="multipart/form-data" class="navbar-form navbar-right">
+        <div class="form-group">
+          <input name="eng" type="text" placeholder="eng" class="form-control">
+        </div>
+        <div class="form-group">
+          <input name="rus" type="text" placeholder="rus" class="form-control">
+        </div>
+        <span class="btn btn-primary fileinput-button">
+            <span>audio</span>
+            <input type="file" name="audio">
+        </span>
+        <button type="submit" class="btn btn-default">add</button>
+      </form>
+    </div>
+  </div>
+</nav>
+    
+<main>
+    {% block body %}{% endblock %}
+</main>
+
+{% block stylesheets %}{% endblock %}
+{% block javascripts %}{% endblock %}
+{% block javascriptCode %}{% endblock %}
+<script language="javascript" src="media/app/js/onload.js"></script>
+</body>
+</html>
